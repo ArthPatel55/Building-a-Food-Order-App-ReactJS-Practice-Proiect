@@ -15,6 +15,7 @@ app.use((req, res, next) => {
   next();
 });
 
+
 app.get('/meals', async (req, res) => {
   const meals = await fs.readFile('./data/available-meals.json', 'utf8');
   res.json(JSON.parse(meals));
@@ -66,4 +67,6 @@ app.use((req, res) => {
   res.status(404).json({ message: 'Not found' });
 });
 
-app.listen(3000);
+// app.listen(3000);
+
+app.listen(3000, () => console.log(`Listening on port ${3000}!`));
