@@ -1,5 +1,5 @@
 import React from 'react';
-import { useContext } from 'react/index.js';
+import { useContext } from 'react';
 import CartContext from '../store/CartContext.jsx';
 import { currencyFormatter } from '../util/formatting.js';
 import Button from './UI/Button.jsx';
@@ -9,7 +9,7 @@ export default function MealItem({meal}) {
     
     function handleAddMealToCart(){
         cartCtx.addItem(meal);
-        
+        console.log(meal.id);
     }
   return (
     <>
