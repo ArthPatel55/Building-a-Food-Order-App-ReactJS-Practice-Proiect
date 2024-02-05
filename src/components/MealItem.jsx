@@ -9,7 +9,6 @@ export default function MealItem({meal}) {
     
     function handleAddMealToCart(){
         cartCtx.addItem(meal);
-        console.log(meal.id);
     }
   return (
     <>
