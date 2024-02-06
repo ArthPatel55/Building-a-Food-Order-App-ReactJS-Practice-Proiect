@@ -33,8 +33,6 @@ export default function Checkout() {
                 }
             })
         });
-
-        console.log(customerData);
     }
   return (
   <Modal open={userProgressCtx.progress === 'checkout'} onClose={handleClose}>
