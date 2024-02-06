@@ -1,5 +1,6 @@
 import React from 'react'
 import useHttp from '../hooks/useHttp.js';
+import Error from './Error.jsx';
 // import { useEffect ,useState} from 'react';
 import MealItem from './MealItem.jsx';
 
@@ -20,9 +21,11 @@ function Meals() {
 //     fetchMeals();
 // },[]);
   if(isLoading){
-    return<p>Fatching Meals...</p>
+    return<p className="center" >Fatching Meals...</p>
   }
-  
+  if(error){
+    return<Error title="Failed to Fatch Meals" message={error} />
+  }
 
 return (
     <ul id="meals"> 
