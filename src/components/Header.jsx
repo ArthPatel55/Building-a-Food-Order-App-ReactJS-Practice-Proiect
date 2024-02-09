@@ -5,14 +5,14 @@ import CartContext from '../store/CartContext.jsx'
 import UserProgressContext from '../store/UserProgressContext';
 import OrderButton from './Orders';
 import Button from './UI/Button.jsx'
-import OrderList from './UI/OrderItem';
-// import OrderProgressContext from '../store/OrderProgressContext.jsx';
+// import OrderList from './UI/OrderItem';
+import OrderProgressContext from '../store/OrderProgressContext.jsx';
 
 export default function Header() {
     const cartCtx = useContext(CartContext);
     // const orderCtx = useContext(OrderContext);
 
-    // const orderProgressCtx =useContext(OrderProgressContext);
+    const orderProgressCtx =useContext(OrderProgressContext);
     const userProgressCtx = useContext(UserProgressContext); 
 
     // if(userProgressCtx){
@@ -31,10 +31,10 @@ export default function Header() {
       function handleShowCart(){
         userProgressCtx.showCart();
       }
-      // function handleShowOrder(){
-      //   console.log(dssfad);
-      //   <OrderList orders={orders} />
-      // }
+      function handleShowOrder(){
+        console.log("dssfad");
+       orderProgressCtx.showOrder();
+      }
     return (
         <header id="main-header">
             <div id="title">
@@ -45,9 +45,9 @@ export default function Header() {
                 <Button textOnly onClick={handleShowCart}>
                   Cart ({totalCartItems})</Button>
                   <OrderButton/>
-                  {/* <Button textOnly onClick={handleShowOrder}>
+                  <Button textOnly onClick={handleShowOrder}>
                     Order
-                  </Button> */}
+                  </Button>
             </nav>
         </header>
     )
